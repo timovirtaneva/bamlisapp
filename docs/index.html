@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Places2Go</title>
+<meta name="description" content="Places2Go is your travel wishlist on a map. Save places, plan trips, and get a nudge when you are nearby. iPhone, iPad, Mac and Apple Watch.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1d1d1f;
+    --muted: #5c5c63;
+    --line: #e4e2dc;
+    --accent: #d2452f;
+    --accent-soft: #fbe9e5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141416;
+      --surface: #1d1d20;
+      --text: #f2f2f4;
+      --muted: #a4a4ad;
+      --line: #313136;
+      --accent: #ff7a5f;
+      --accent-soft: #3a211c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; gap: 20px; height: 52px; }
+  nav .brand { font-weight: 700; text-decoration: none; color: var(--text); margin-right: auto; display: flex; align-items: center; gap: 8px; }
+  nav a.link { color: var(--muted); text-decoration: none; font-size: 15px; }
+  nav a.link:hover { color: var(--text); }
+
+  .pin { width: 22px; height: 22px; flex: none; }
+
+  header.hero { padding: 72px 0 48px; }
+  .hero h1 { font-size: clamp(40px, 8vw, 60px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .hero .tagline { font-size: clamp(20px, 3.4vw, 26px); color: var(--muted); margin: 0 0 24px; }
+  .hero p.lead { font-size: 19px; margin: 0 0 20px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .chips li { background: var(--accent-soft); color: var(--text); border-radius: 999px; padding: 4px 12px; font-size: 14px; }
+
+  section { padding: 48px 0; border-top: 1px solid var(--line); scroll-margin-top: 56px; }
+  h2 { font-size: 30px; letter-spacing: -0.01em; margin: 0 0 20px; }
+  h3 { font-size: 19px; margin: 28px 0 8px; }
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 17px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .contact {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px 22px; margin: 0 0 8px;
+  }
+  .contact .email { font-size: 20px; font-weight: 600; word-break: break-all; }
+  details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  details summary { cursor: pointer; font-weight: 600; list-style-position: outside; }
+  details p, details ul { margin: 10px 0 0; color: var(--muted); }
+
+  .policy ul { padding-left: 20px; }
+  .policy li { margin-bottom: 10px; }
+  .meta { color: var(--muted); font-size: 15px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" style="color:var(--accent)" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      Places2Go
+    </a>
+    <a class="link" href="#support">Support</a>
+    <a class="link" href="#privacy">Privacy</a>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="wrap">
+      <h1>Places2Go</h1>
+      <p class="tagline">Save places. Plan trips. Go.</p>
+      <p class="lead">Your travel wishlist on a map. Collect the places you want to visit, plan when to go, and let Places2Go tell you when one of them is just around the corner.</p>
+      <ul class="chips" aria-label="Platforms and languages">
+        <li>iPhone</li><li>iPad</li><li>Mac</li><li>Apple Watch</li>
+        <li>English · Suomi · Svenska · Deutsch · Français · Español</li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="features" aria-labelledby="features-h">
+    <div class="wrap">
+      <h2 id="features-h">What it does</h2>
+      <div class="features">
+        <div class="card">
+          <h3>Save places from anywhere</h3>
+          <p>Share a place from Apple Maps, Google Maps, TripAdvisor, Airbnb, OpenTable or the Michelin Guide. Places2Go reads the name, address and location for you.</p>
+        </div>
+        <div class="card">
+          <h3>Organise it your way</h3>
+          <p>Your own nested categories with symbols and colours, favourites, interest ratings, and filters for the map.</p>
+        </div>
+        <div class="card">
+          <h3>Plan your trips</h3>
+          <p>Group places into trips, plan them day by day in local time, add visits to your calendar and get directions in your favourite maps app.</p>
+        </div>
+        <div class="card">
+          <h3>Know what is near you</h3>
+          <p>See which of your places are closest, get an alert when you pass one, and keep the nearest ones on a home screen widget.</p>
+        </div>
+        <div class="card">
+          <h3>Remember where you have been</h3>
+          <p>Mark places visited and see the photos you took there, straight from your library. Nothing is copied or uploaded.</p>
+        </div>
+        <div class="card">
+          <h3>Private by design</h3>
+          <p>No account, no ads, no tracking. Your places sync only through your own private iCloud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="support" aria-labelledby="support-h">
+    <div class="wrap">
+      <h2 id="support-h">Support</h2>
+      <div class="contact">
+        <div class="meta">Questions, problems or ideas? Email:</div>
+        <div class="email"><a href="mailto:stindesofta@gmail.com">SUPPORT_EMAIL</a></div>
+        <div class="meta">Please mention your device and its iOS, iPadOS, macOS or watchOS version.</div>
+      </div>
+
+      <h3>Frequently asked questions</h3>
+      <details>
+        <summary>Do I need an account?</summary>
+        <p>No. Places2Go has no account or sign-in. iCloud is optional: with it, your places sync between your iPhone, iPad, Mac and Apple Watch; without it, the app works on one device.</p>
+      </details>
+      <details>
+        <summary>How do I add a place?</summary>
+        <p>Tap any point of interest on the map, search, long-press anywhere, or save the spot where you are standing. From another app, use Share → Places2Go (for example in Apple Maps or Google Maps). On the Mac, paste or drop a link.</p>
+      </details>
+      <details>
+        <summary>My places are not syncing between devices.</summary>
+        <p>Check that every device is signed in to the same Apple Account and that iCloud is allowed for Places2Go in Settings → [your name] → iCloud. Syncing can take a moment after a change, especially on a slow connection.</p>
+      </details>
+      <details>
+        <summary>Why does Places2Go ask for location “Always”?</summary>
+        <p>Only if you switch on Nearby Alerts in the app’s Settings. Alerts for up to 20 saved places work in the background, which needs “Always” access. Without it the map still shows nearby places while the app is open. Your location never leaves your device.</p>
+      </details>
+      <details>
+        <summary>I do not get nearby alerts.</summary>
+        <ul>
+          <li>Nearby Alerts is switched on in the app’s Settings.</li>
+          <li>Location access for Places2Go is set to “Always”.</li>
+          <li>Notifications for Places2Go are allowed.</li>
+          <li>Focus modes may hold alerts; allowing time-sensitive notifications lets them through.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Why does the Photos screen ask for full library access?</summary>
+        <p>Places2Go finds the photos you took at a place or during a visit by their date and location, which is only possible with full access. Access is requested only when you open a place’s Photos screen. Nothing is copied, changed or uploaded.</p>
+      </details>
+      <details>
+        <summary>Can I back up my places or share them?</summary>
+        <p>Yes. Back up to a file whenever you like, and send single places or a whole trip to a friend with AirDrop.</p>
+      </details>
+      <details>
+        <summary>Does the Apple Watch app need my iPhone nearby?</summary>
+        <p>No. The watch app keeps its own iCloud copy of your places, so it can show the nearest ones, give directions and mark places visited on its own.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="privacy" class="policy" aria-labelledby="privacy-h">
+    <div class="wrap">
+      <h2 id="privacy-h">Privacy policy</h2>
+      <p><strong>Places2Go does not collect any personal data.</strong></p>
+      <ul>
+        <li>Your places, trips, visits and categories are stored on your device and, if you use iCloud, in your own private iCloud database. The developer cannot access them.</li>
+        <li>Your location is used on your device to show nearby places, sort them by distance and alert you when you arrive. It is not sent to the developer or to anyone else.</li>
+        <li>Photos are read from your library on your device only when you open a place’s Photos screen. Nothing is copied or uploaded.</li>
+        <li>When you add a place from a link, Places2Go fetches that link’s web page to read its name and location, and uses Apple Maps to look up addresses. These requests contain no information about you.</li>
+        <li>Calendar access is write-only and used only to add planned visits as events. The app never reads your calendar.</li>
+        <li>There is no account, no advertising, no analytics and no tracking.</li>
+      </ul>
+      <p>Contact: <a href="mailto:mailto:stindesofta@gmail.com">SUPPORT_EMAIL</a></p>
+      <p class="meta">Last updated: 25 September 2026</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Timo Virtaneva</span>
+    <span><a href="#support">Support</a> · <a href="#privacy">Privacy policy</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
