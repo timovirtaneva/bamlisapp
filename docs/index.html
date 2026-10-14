@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Places2Go</title>
-<meta name="description" content="Places2Go is your travel wishlist on a map. Save places, plan trips, and get a nudge when you are nearby. iPhone, iPad, Mac and Apple Watch.">
+<title>Bamlis</title>
+<meta name="description" content="Bamlis transcribes audio and video to text entirely on your device. Finnish and 20+ languages, speaker names, subtitles. iPhone, iPad, Mac and Apple Watch. Free, no account, no tracking.">
 <meta name="color-scheme" content="light dark">
 <style>
   :root {
-    --bg: #fbfaf7;
+    --bg: #f7f9fb;
     --surface: #ffffff;
     --text: #1d1d1f;
     --muted: #5c5c63;
-    --line: #e4e2dc;
-    --accent: #d2452f;
-    --accent-soft: #fbe9e5;
+    --line: #dfe3e8;
+    --accent: #2f6fd2;
+    --accent-soft: #e4edfb;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -23,8 +23,8 @@
       --text: #f2f2f4;
       --muted: #a4a4ad;
       --line: #313136;
-      --accent: #ff7a5f;
-      --accent-soft: #3a211c;
+      --accent: #6ea2ff;
+      --accent-soft: #1c2a3f;
     }
   }
   * { box-sizing: border-box; }
@@ -51,7 +51,7 @@
   nav a.link { color: var(--muted); text-decoration: none; font-size: 15px; }
   nav a.link:hover { color: var(--text); }
 
-  .pin { width: 22px; height: 22px; flex: none; }
+  .mark { width: 22px; height: 22px; flex: none; }
 
   header.hero { padding: 72px 0 48px; }
   .hero h1 { font-size: clamp(40px, 8vw, 60px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em; }
@@ -80,6 +80,7 @@
   .policy ul { padding-left: 20px; }
   .policy li { margin-bottom: 10px; }
   .meta { color: var(--muted); font-size: 15px; }
+  .credits { color: var(--muted); font-size: 15px; }
 
   footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
@@ -90,8 +91,8 @@
 <nav>
   <div class="wrap">
     <a class="brand" href="#top">
-      <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" style="color:var(--accent)" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-      Places2Go
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor" style="color:var(--accent)"><rect x="3" y="9" width="2.5" height="6" rx="1.25"/><rect x="7.5" y="5" width="2.5" height="14" rx="1.25"/><rect x="12" y="2" width="2.5" height="20" rx="1.25"/><rect x="16.5" y="6" width="2.5" height="12" rx="1.25"/><rect x="21" y="10" width="2.5" height="4" rx="1.25" transform="translate(-1 0)"/></g></svg>
+      Bamlis
     </a>
     <a class="link" href="#support">Support</a>
     <a class="link" href="#privacy">Privacy</a>
@@ -101,9 +102,9 @@
 <main id="top">
   <header class="hero">
     <div class="wrap">
-      <h1>Places2Go</h1>
-      <p class="tagline">Save places. Plan trips. Go.</p>
-      <p class="lead">Your travel wishlist on a map. Collect the places you want to visit, plan when to go, and let Places2Go tell you when one of them is just around the corner.</p>
+      <h1>Bamlis</h1>
+      <p class="tagline">Speech to text. On your device.</p>
+      <p class="lead">Bamlis turns recordings, voice memos and videos into text without sending a single byte to a server. Finnish by default, more than twenty other languages, automatic speaker names and subtitle export. Free, no account, no tracking.</p>
       <ul class="chips" aria-label="Platforms and languages">
         <li>iPhone</li><li>iPad</li><li>Mac</li><li>Apple Watch</li>
         <li>English · Suomi · Svenska · Deutsch · Français · Español</li>
@@ -116,28 +117,36 @@
       <h2 id="features-h">What it does</h2>
       <div class="features">
         <div class="card">
-          <h3>Save places from anywhere</h3>
-          <p>Share a place from Apple Maps, Google Maps, TripAdvisor, Airbnb, OpenTable or the Michelin Guide. Places2Go reads the name, address and location for you.</p>
+          <h3>Transcribes any recording</h3>
+          <p>Audio files, voice memos and the audio track of videos: MP4, MOV, M4A, MP3, WAV, MKV, WebM, FLV and more. Share a file to Bamlis from any app, or pick it from Files.</p>
         </div>
         <div class="card">
-          <h3>Organise it your way</h3>
-          <p>Your own nested categories with symbols and colours, favourites, interest ratings, and filters for the map.</p>
+          <h3>Finnish and 20+ languages</h3>
+          <p>WhisperKit (OpenAI Whisper on Core ML) gives accurate text with punctuation and sentence breaks. Apple's built-in speech recognition is available as a second engine.</p>
         </div>
         <div class="card">
-          <h3>Plan your trips</h3>
-          <p>Group places into trips, plan them day by day in local time, add visits to your calendar and get directions in your favourite maps app.</p>
+          <h3>Knows who is speaking</h3>
+          <p>Speakers are identified automatically. Rename “Speaker 1” to a real name in one step, or fix a single sentence.</p>
         </div>
         <div class="card">
-          <h3>Know what is near you</h3>
-          <p>See which of your places are closest, get an alert when you pass one, and keep the nearest ones on a home screen widget.</p>
+          <h3>Listen, check, edit</h3>
+          <p>Play the recording with the current sentence highlighted, tap a sentence to jump to it, and edit the text in place.</p>
         </div>
         <div class="card">
-          <h3>Remember where you have been</h3>
-          <p>Mark places visited and see the photos you took there, straight from your library. Nothing is copied or uploaded.</p>
+          <h3>Record anywhere</h3>
+          <p>Record on iPhone, iPad, Mac or Apple Watch. Watch recordings go to your iPhone for transcription, and the Apple Watch Ultra Action button can start and stop them.</p>
+        </div>
+        <div class="card">
+          <h3>Export for every use</h3>
+          <p>Text with paragraphs, text without speaker names, text with timestamps, subtitles (.srt) for video editing and a spreadsheet (.csv) for analysis.</p>
         </div>
         <div class="card">
           <h3>Private by design</h3>
-          <p>No account, no ads, no tracking. Your places sync only through your own private iCloud.</p>
+          <p>Your audio and your text never leave the device. Transcripts sync only through your own iCloud. No account, no ads, no analytics.</p>
+        </div>
+        <div class="card">
+          <h3>Free and open</h3>
+          <p>Built on open source models and software: WhisperKit and SpeakerKit by Argmax, OpenAI Whisper and pyannote speaker diarization.</p>
         </div>
       </div>
     </div>
@@ -148,47 +157,46 @@
       <h2 id="support-h">Support</h2>
       <div class="contact">
         <div class="meta">Questions, problems or ideas? Email:</div>
-        <div class="email"><a href="mailto:stindesofta@gmail.com">SUPPORT_EMAIL</a></div>
+        <div class="email"><a href="mailto:stindesofta@gmail.com">stindesofta@gmail.com</a></div>
         <div class="meta">Please mention your device and its iOS, iPadOS, macOS or watchOS version.</div>
       </div>
 
       <h3>Frequently asked questions</h3>
       <details>
+        <summary>Why does the first transcription take so long?</summary>
+        <p>The first time you use a speech model, Bamlis downloads it (about 630 MB for the default Whisper model) and then prepares it for your device. On an iPhone this preparation can take a few minutes and happens once per installation. Keep Bamlis open; the screen stays on by itself. After that, models load in seconds.</p>
+      </details>
+      <details>
+        <summary>Does Bamlis need an internet connection?</summary>
+        <p>Only to download a speech model the first time it is needed, and for iCloud sync if you use it. Transcription itself runs offline on your device.</p>
+      </details>
+      <details>
         <summary>Do I need an account?</summary>
-        <p>No. Places2Go has no account or sign-in. iCloud is optional: with it, your places sync between your iPhone, iPad, Mac and Apple Watch; without it, the app works on one device.</p>
+        <p>No. Bamlis has no account or sign-in. iCloud is optional: with it, your transcripts appear on your iPhone, iPad and Mac; without it, the app works on one device.</p>
       </details>
       <details>
-        <summary>How do I add a place?</summary>
-        <p>Tap any point of interest on the map, search, long-press anywhere, or save the spot where you are standing. From another app, use Share → Places2Go (for example in Apple Maps or Google Maps). On the Mac, paste or drop a link.</p>
+        <summary>Which engine should I use?</summary>
+        <p>WhisperKit is the default and gives the best results for Finnish and most languages, including punctuation. Apple Speech is faster to start and needs no large download, but it is less accurate for Finnish. Switch under the globe menu → Engine.</p>
       </details>
       <details>
-        <summary>My places are not syncing between devices.</summary>
-        <p>Check that every device is signed in to the same Apple Account and that iCloud is allowed for Places2Go in Settings → [your name] → iCloud. Syncing can take a moment after a change, especially on a slow connection.</p>
+        <summary>How do I send a file to Bamlis?</summary>
+        <p>Tap + in Bamlis and pick a file, or use Share → Bamlis from Voice Memos, Files or any other app. On the Mac, use Open With in Finder or drop the file on the app icon. Several files can be queued at once.</p>
       </details>
       <details>
-        <summary>Why does Places2Go ask for location “Always”?</summary>
-        <p>Only if you switch on Nearby Alerts in the app’s Settings. Alerts for up to 20 saved places work in the background, which needs “Always” access. Without it the map still shows nearby places while the app is open. Your location never leaves your device.</p>
+        <summary>The speakers are wrong or mixed up.</summary>
+        <p>Automatic identification works best with clear, separate voices. Tap Edit, open a sentence’s speaker menu and choose the right name, or use “Rename … Everywhere” to give a speaker a real name throughout. You can also turn Identify Speakers off in the globe menu.</p>
       </details>
       <details>
-        <summary>I do not get nearby alerts.</summary>
-        <ul>
-          <li>Nearby Alerts is switched on in the app’s Settings.</li>
-          <li>Location access for Places2Go is set to “Always”.</li>
-          <li>Notifications for Places2Go are allowed.</li>
-          <li>Focus modes may hold alerts; allowing time-sensitive notifications lets them through.</li>
-        </ul>
+        <summary>How do I use the Apple Watch Ultra Action button?</summary>
+        <p>Open Bamlis on the watch once, then on the watch go to Settings → Action Button → Action: Control → Control: Bamlis. One press starts a recording, the next press stops it and sends it to your iPhone. On other watches, say “Record with Bamlis” to Siri or add the shortcut from the Shortcuts app.</p>
       </details>
       <details>
-        <summary>Why does the Photos screen ask for full library access?</summary>
-        <p>Places2Go finds the photos you took at a place or during a visit by their date and location, which is only possible with full access. Access is requested only when you open a place’s Photos screen. Nothing is copied, changed or uploaded.</p>
+        <summary>How do I free the space the models use?</summary>
+        <p>Globe menu → About Bamlis → Downloaded Models, then delete a model. It is downloaded again the next time it is needed.</p>
       </details>
       <details>
-        <summary>Can I back up my places or share them?</summary>
-        <p>Yes. Back up to a file whenever you like, and send single places or a whole trip to a friend with AirDrop.</p>
-      </details>
-      <details>
-        <summary>Does the Apple Watch app need my iPhone nearby?</summary>
-        <p>No. The watch app keeps its own iCloud copy of your places, so it can show the nearest ones, give directions and mark places visited on its own.</p>
+        <summary>My transcripts are not syncing between devices.</summary>
+        <p>Check that every device is signed in to the same Apple Account and that iCloud is allowed for Bamlis in Settings → [your name] → iCloud. Audio files themselves stay on the device where they were imported; only the transcripts sync.</p>
       </details>
     </div>
   </section>
@@ -196,17 +204,32 @@
   <section id="privacy" class="policy" aria-labelledby="privacy-h">
     <div class="wrap">
       <h2 id="privacy-h">Privacy policy</h2>
-      <p><strong>Places2Go does not collect any personal data.</strong></p>
+      <p><strong>Bamlis does not collect any personal data.</strong></p>
       <ul>
-        <li>Your places, trips, visits and categories are stored on your device and, if you use iCloud, in your own private iCloud database. The developer cannot access them.</li>
-        <li>Your location is used on your device to show nearby places, sort them by distance and alert you when you arrive. It is not sent to the developer or to anyone else.</li>
-        <li>Photos are read from your library on your device only when you open a place’s Photos screen. Nothing is copied or uploaded.</li>
-        <li>When you add a place from a link, Places2Go fetches that link’s web page to read its name and location, and uses Apple Maps to look up addresses. These requests contain no information about you.</li>
-        <li>Calendar access is write-only and used only to add planned visits as events. The app never reads your calendar.</li>
+        <li>Your audio files, recordings and transcripts are stored on your device and, if you use iCloud, in your own private iCloud database (Apple CloudKit). The developer cannot access them.</li>
+        <li>Transcription and speaker identification run entirely on your device. No audio or text is ever sent to the developer or to any server.</li>
+        <li>The microphone is used only when you start a recording. Recordings stay on your device.</li>
+        <li>Bamlis connects to the internet only to download speech models from Hugging Face (huggingface.co) the first time a model is needed. The request contains no personal data or identifiers beyond what any file download includes, such as your IP address, which Hugging Face handles under its own privacy policy. Downloaded models can be deleted in the app.</li>
+        <li>Recordings made on Apple Watch are transferred to your iPhone over Apple’s WatchConnectivity.</li>
         <li>There is no account, no advertising, no analytics and no tracking.</li>
       </ul>
-      <p>Contact: <a href="mailto:mailto:stindesofta@gmail.com">SUPPORT_EMAIL</a></p>
-      <p class="meta">Last updated: 25 September 2026</p>
+      <p>Contact: <a href="mailto:stindesofta@gmail.com">stindesofta@gmail.com</a></p>
+      <p class="meta">Last updated: 14 October 2026</p>
+
+      <h3 id="tietosuoja">Tietosuojakäytäntö (suomeksi)</h3>
+      <p><strong>Bamlis ei kerää mitään henkilötietoja.</strong></p>
+      <ul>
+        <li>Äänitiedostot, äänitykset ja litteroinnit tallennetaan laitteellesi ja, jos käytät iCloudia, omaan yksityiseen iCloud-tietokantaasi (Apple CloudKit). Kehittäjä ei pääse niihin käsiksi.</li>
+        <li>Litterointi ja puhujantunnistus tapahtuvat kokonaan laitteellasi. Ääntä tai tekstiä ei koskaan lähetetä kehittäjälle eikä millekään palvelimelle.</li>
+        <li>Mikrofonia käytetään vain, kun aloitat äänityksen. Äänitykset pysyvät laitteellasi.</li>
+        <li>Bamlis käyttää verkkoa vain puhemallien lataamiseen Hugging Facesta (huggingface.co), kun mallia tarvitaan ensimmäisen kerran. Pyyntö ei sisällä henkilötietoja tai tunnisteita muuten kuin minkä tahansa tiedostolatauksen tavoin, esimerkiksi IP-osoitteen, jota Hugging Face käsittelee oman tietosuojakäytäntönsä mukaisesti. Ladatut mallit voi poistaa sovelluksessa.</li>
+        <li>Apple Watchilla tehdyt äänitykset siirretään iPhoneen Applen WatchConnectivity-yhteydellä.</li>
+        <li>Ei tunnuksia, ei mainontaa, ei analytiikkaa, ei seurantaa.</li>
+      </ul>
+      <p class="meta">Päivitetty: 14. lokakuuta 2026</p>
+
+      <h3>Open source</h3>
+      <p class="credits">Bamlis uses WhisperKit and SpeakerKit (Argmax, Inc., MIT License), OpenAI Whisper models (MIT License), pyannote speaker-diarization-community-1 (MIT License) and Swift Argument Parser (Apache License 2.0). The full license texts are in the app under About Bamlis.</p>
     </div>
   </section>
 </main>
